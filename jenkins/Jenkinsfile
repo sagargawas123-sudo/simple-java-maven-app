@@ -47,7 +47,7 @@ pipeline {
                         mvn sonar:sonar \
                         -Dsonar.projectKey=simple-java-maven-app \
                         -Dsonar.projectName='Simple Java Maven App' \
-                        -Dsonar.host.url=${SONARQUBE_URL} \
+                        -Dsonar.host.url=http://18.205.17.235:9000 \
                         -Dsonar.token=${SONAR_TOKEN}
                     '''
                 }
