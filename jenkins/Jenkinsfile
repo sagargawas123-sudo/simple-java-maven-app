@@ -6,9 +6,9 @@ pipeline {
         PATH = "/opt/maven/bin:$JAVA_HOME/bin:$PATH"
         
         // Nexus Configuration - Update with your EC2 IP
-        NEXUS_URL = "http://54.175.92.53:8081"
+        NEXUS_URL = "http://18.205.17.235:8081"
         NEXUS_CREDENTIAL_ID = "nexus-credentials"
-        SONARQUBE_URL = "http://54.175.92.53:9000"
+        SONARQUBE_URL = "http://18.205.17.235:9000"
     }
     
     options {
@@ -73,7 +73,7 @@ EOF
                     
                     # Deploy to Nexus
                     mvn deploy -DskipTests -s settings.xml \
-                    -DaltDeploymentRepository=nexus::http://54.175.92.53:8081/repository/maven-snapshots/
+                    -DaltDeploymentRepository=nexus::http://18.205.17.235:8081/repository/maven-snapshots/
                 '''
             }
         }
