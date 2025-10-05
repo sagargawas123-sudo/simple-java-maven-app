@@ -6,10 +6,9 @@ pipeline {
         PATH = "/opt/maven/bin:$JAVA_HOME/bin:$PATH"
         
         // Nexus Configuration - Update with your EC2 IP
-        NEXUS_URL = "http://52.90.103.249:8081"
+        NEXUS_URL = "http://54.175.92.53:8081"
         NEXUS_CREDENTIAL_ID = "nexus-credentials"
-        SONARQUBE_URL = "http://52.90.103.249:9000"
-        SONARQUBE_TOKEN = credentials('sonarqube-token')
+        SONARQUBE_URL = "http://54.175.92.53:9000"
     }
     
     options {
@@ -20,7 +19,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'master',
-                    url: 'https://github.com/skillupwithsachin/simple-java-maven-app.git'
+                    url: 'https://github.com/sagargawas123-sudo/simple-java-maven-app.git'
             }
         }
         
@@ -72,7 +71,7 @@ EOF
                     
                     # Deploy to Nexus
                     mvn deploy -DskipTests -s settings.xml \
-                    -DaltDeploymentRepository=nexus::http://52.90.103.249:8081/repository/maven-snapshots/
+                    -DaltDeploymentRepository=nexus::http://54.175.92.53:8081/repository/maven-snapshots/
                 '''
             }
         }
