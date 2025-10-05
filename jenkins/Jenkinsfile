@@ -63,7 +63,7 @@ pipeline {
     <server>
       <id>nexus</id>
       <username>admin</username>
-      <password>8e6fc69a-51a5-4f21-be55-6c187d86a0c5</password>
+      <password>admin</password>
     </server>
   </servers>
 </settings>
